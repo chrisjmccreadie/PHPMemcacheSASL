@@ -33,10 +33,12 @@ First, make sure you have activated the Memcachier add-on in [your AppFog consol
 
 Now you are ready to integrate Memcachier with your code. To get started, download PHPMemcacheSASL.php and put it in your working directory. If you have another implementation of PHPMemcacheSASL.php, you must replace it with the file from this project. In this example, I will assume PHPMemcacheSASL.php is in the same directory:
 
-	include('MemcacheSASL.php');
-	$m = new MemcacheSASL;
-	$m->addServer(getenv('MEMCACHIER_SERVERS'));
-	$m->setSaslAuthData(getenv('MEMCACHIER_USERNAME'), getenv('MEMCACHIER_PASSWORD'));
+```php
+include('MemcacheSASL.php');
+$m = new MemcacheSASL;
+$m->addServer(getenv('MEMCACHIER_SERVERS'));
+$m->setSaslAuthData(getenv('MEMCACHIER_USERNAME'), getenv('MEMCACHIER_PASSWORD'));
+```
 
 You have now initiated a connection for your Memcachier server. Here is an example communication with the Memcachier server: 
 
