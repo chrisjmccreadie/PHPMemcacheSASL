@@ -56,11 +56,11 @@ $m->delete('test');
 
 This code will add a cache entry with the key 'test' and a value '123'. It will then immediately retrieve and print the value of the key 'test' (which is '123') from the cache. Finally, it will delete this cache entry.
 
-$m->add() can also accept a third argument, $expiration, which will set the expiration of your value to $expiration seconds from now. To set the same value as above with a one hour expiration, I would write:
+$m->add() can also accept a third argument, $expiration, which will set the cache expiration of your key to $expiration seconds from now. To set the same key/value as above with a one hour expiration, I would write:
 
 ```php
-$m->add('test', '123', 3600);
-echo $m->get('test');
+$m->add('test', '123', 3600); // set expiration of 1hr (60s * 60m)
+echo $m->get('test'); // output: '123'
 $m->delete('test');
 ```
 
