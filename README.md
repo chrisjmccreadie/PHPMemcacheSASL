@@ -50,7 +50,7 @@ You have now initiated a connection for your Memcachier server. Here is an examp
 
 ```php
 $m->add('test', '123');
-echo $m->get('test');
+echo $m->get('test'); // output: '123'
 $m->delete('test');
 ```
 
