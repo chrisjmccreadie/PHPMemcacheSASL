@@ -4,6 +4,8 @@ This is a modification of [ronnywang](https://github.com/ronnywang/PHPMemcacheSA
 
 ### What's the difference?
 
+
+
 On AppFog, the connection information for your Memcachier instance is exposed through three environment variables: MEMCACHIER_SERVERS, MEMCACHIER_USERNAME, and MEMCACHIER_PASSWORD. The format of MEMCACHIER_SERVERS is $HOST:$PORT (ex. xxx.ec2.memcachier:11211). In the [AppFog Memcachier PHP docs](http://docs.appfog.com/add-ons/memcachier#php), the example code suggests that you add a server using the syntax:  
 
 	$m->addServer($_ENV["MEMCACHIER_SERVERS"], '11211');
@@ -20,7 +22,7 @@ This way, you do not need to parse/explode the value of MEMCACHIER_SERVERS befor
 
 ### Implementation
 
-First, make sure you have activated the Memcachier add-on in your AppFog console. 
+First, make sure you have activated the Memcachier add-on in [your AppFog console](https://console.appfog.com/). 
 
 1. Go to the dashboard for your app
 2. Click "Add-Ons" in your left navigation
@@ -52,9 +54,9 @@ $m->add() can also accept a third argument, $expiration, which will set the expi
 
 If you use this software, and would like to be listed below, just [send me an email](mailto:cyrus@findnewjams.com).
 
-### Revisions and Contact
+### Revisions, Contact, and Acknowledgements
 
-Please feel free to submit a pull request. I created this project to benefit other [AppFog](http://appfog.com) users, and plan to continually revise it as per my communications with [AppFog](http://appfog.com).
+Please feel free to submit a pull request. I created this project to benefit other users, and plan to continually revise it as per my communications with them. Thanks to [ronnywang](https://github.com/ronnywang/PHPMemcacheSASL) for the base code and [AppFog](http://appfog.com) for providing an awesome hosting solution.
 
 -----
 
