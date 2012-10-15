@@ -4,13 +4,13 @@ First commit.
 
 -----
 
-Memcache class with SASL support
+#### Memcache class with SASL support
 
-Memcache Binary Protocol
+##### Memcache Binary Protocol  
 http://code.google.com/p/memcached/wiki/BinaryProtocolRevamped
 
-Memcache SASL Auth Protocol
+##### Memcache SASL Auth Protocol  
 http://code.google.com/p/memcached/wiki/SASLAuthProtocol
 
-PHP Memcached class
+##### PHP Memcached class  
 http://php.net/manual/en/class.memcached.php
