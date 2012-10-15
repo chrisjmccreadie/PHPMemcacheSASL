@@ -4,7 +4,7 @@ First commit.
 
 -----
 
-#### Memcache class with SASL support
+#### Further reading
 
 ##### Memcache Binary Protocol  
 http://code.google.com/p/memcached/wiki/BinaryProtocolRevamped
