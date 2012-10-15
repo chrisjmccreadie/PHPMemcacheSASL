@@ -42,17 +42,21 @@ $m->setSaslAuthData(getenv('MEMCACHIER_USERNAME'), getenv('MEMCACHIER_PASSWORD')
 
 You have now initiated a connection for your Memcachier server. Here is an example communication with the Memcachier server: 
 
-	$m->add('test', '123');
-	echo $m->get('test');
-	$m->delete('test');
+```php
+$m->add('test', '123');
+echo $m->get('test');
+$m->delete('test');
+```
 
 This code will add a cache entry with the key 'test' and a value '123'. It will then immediately retrieve and print the value of the key 'test' (which is '123') from the cache. Finally, it will delete this cache entry.
 
 $m->add() can also accept a third argument, $expiration, which will set the expiration of your value to $expiration seconds from now. To set the same value as above with a one hour expiration, I would write:
 
-	$m->add('test', '123', 3600);
-	echo $m->get('test');
-	$m->delete('test');
+```php
+$m->add('test', '123', 3600);
+echo $m->get('test');
+$m->delete('test');
+```
 
 You can see the full code of this example in [example.php](https://github.com/ceslami/PHPMemcacheSASL/blob/master/example.php).
 
