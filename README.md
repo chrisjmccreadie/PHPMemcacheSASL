@@ -1,10 +1,10 @@
-### PHPMemcacheSASL for AppFog
+## PHPMemcacheSASL for AppFog
 
 This is a modification of [ronnywang](https://github.com/ronnywang/PHPMemcacheSASL)'s implementation of PHPMemcacheSASL specifically for use of [AppFog](http://appfog.com). 
 
+
+
 ### What's the difference?
-
-
 
 On AppFog, the connection information for your Memcachier instance is exposed through three environment variables: MEMCACHIER_SERVERS, MEMCACHIER_USERNAME, and MEMCACHIER_PASSWORD. The format of MEMCACHIER_SERVERS is $HOST:$PORT (ex. xxx.ec2.memcachier:11211). In the [AppFog Memcachier PHP docs](http://docs.appfog.com/add-ons/memcachier#php), the example code suggests that you add a server using the syntax:  
 
@@ -29,7 +29,7 @@ First, make sure you have activated the Memcachier add-on in [your AppFog consol
 3. Click "Install" under Memcachier
 4. Click "Env Variables" in your left navigation. Make sure that your MEMCACHIER_SERVERS, MEMCACHIER_USERNAME, and MEMCACHIER_PASSWORD variables are listed.
 
-Now you are ready to integrate Memcachier with your code. To get started, download PHPMemcacheSASL.php and put it in your working directory. For this example, I will assume PHPMemcacheSASL.php is in the same directory:
+Now you are ready to integrate Memcachier with your code. To get started, download PHPMemcacheSASL.php and put it in your working directory. If you have another implementation of PHPMemcacheSASL.php, you must replace it with the file from this project. In this example, I will assume PHPMemcacheSASL.php is in the same directory:
 
 	include('MemcacheSASL.php');
 	$m = new MemcacheSASL;
@@ -49,6 +49,8 @@ $m->add() can also accept a third argument, $expiration, which will set the expi
 	$m->add('test', '123', 3600);
 	echo $m->get('test');
 	$m->delete('test');
+
+You can see the full code of this example in [example.php](https://github.com/ceslami/PHPMemcacheSASL/blob/master/example.php).
 
 ### Used by
 
