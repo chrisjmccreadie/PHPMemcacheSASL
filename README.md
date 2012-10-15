@@ -1,6 +1,6 @@
 ### PHPMemcacheSASL for AppFog
 
-First commit.    
+This is a modification of [ronnywang](https://github.com/ronnywang/PHPMemcacheSASL)'s implementation of PHPMemcacheSASL specifically for use of [AppFog](http://appfog.com).
 
 -----
 
