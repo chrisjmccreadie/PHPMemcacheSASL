@@ -12,13 +12,17 @@ On AppFog, the connection information for your Memcachier instance is exposed th
 
 The format of ``$_ENV['MEMCACHIER_SERVERS']`` is ``$HOST:$PORT`` (ex. xxx.ec2.memcachier:11211). In the [AppFog Memcachier PHP docs](http://docs.appfog.com/add-ons/memcachier#php), the example code suggests that you add a server using the syntax:  
 
-	$m->addServer($_ENV["MEMCACHIER_SERVERS"], '11211');
-	// Evaluates as: $m->addServer(xxx.ec2.memcachier.com:11211', '11211');
+```php
+$m->addServer($_ENV["MEMCACHIER_SERVERS"], '11211');
+// Evaluates as: $m->addServer(xxx.ec2.memcachier.com:11211', '11211');
+```
 
 This is a problem because the first argument of addServer expects the hostname without the port. I have modified	the API of $m->addServer to:
 
-	$m->addServer($_ENV["MEMCACHIER_SERVERS"]);
-	// Evaluates as: $m->addServer(xxx.ec2.memcachier.com:11211');
+```php
+$m->addServer($_ENV["MEMCACHIER_SERVERS"]);
+// Evaluates as: $m->addServer(xxx.ec2.memcachier.com:11211');
+```
 
 This way, you do not need to parse/explode the value of ``$_ENV['MEMCACHIER_SERVERS']`` before using it in your code. Other implementations (and docs) for PHPMemcacheSASL do not account for this difference in syntax, so they will be unhelpful to you if you are an AppFog client.
 
