@@ -1,3 +1,9 @@
+### PHPMemcacheSASL for AppFog
+
+First commit.    
+
+-----
+
 Memcache class with SASL support
 
 Memcache Binary Protocol
