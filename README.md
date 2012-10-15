@@ -66,6 +66,32 @@ $m->delete('test');
 
 You can see the full code of this example in [example.php](https://github.com/ceslami/PHPMemcacheSASL/blob/master/example.php).
 
+Here is a production example using Memcachier to cache results from queries to a MySQL database:
+
+```php
+include('MemcacheSASL.php');
+
+///
+
+function memcacheQuery($query, $hours = 1) {
+	$m = new MemcacheSASL;
+	$m->addServer(getenv('MEMCACHIER_SERVERS'));
+	$m->setSaslAuthData(getenv('MEMCACHIER_USERNAME'), getenv('MEMCACHIER_PASSWORD'));
+	$key = md5($query);
+	
+	$songs_array = $m->get($key);
+	if( !$songs_array ) {
+		$raw_query = mysql_query($query);
+		while( $songs = mysql_fetch_array($raw_query) ) {
+			$songs_array[] = $songs;
+		}
+		$cache_entry = $m->add($key, $songs_array, 60*60*$hours);
+	}
+
+	return $songs_array;
+}
+```
+
 ### Used by
 
 If you use this software, and would like to be listed below, just [send me an email](mailto:cyrus@findnewjams.com).
