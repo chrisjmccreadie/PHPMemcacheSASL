@@ -15,9 +15,7 @@ The format of ``$_ENV['MEMCACHIER_SERVERS']`` is ``$HOST:$PORT`` (ex. xxx.ec2.me
 	$m->addServer($_ENV["MEMCACHIER_SERVERS"], '11211');
 	// Evaluates as: $m->addServer(xxx.ec2.memcachier.com:11211', '11211');
 
-This is a problem because the first argument of addServer expects the hostname without the port.  
-
-I have modified	the API of $m->addServer to:
+This is a problem because the first argument of addServer expects the hostname without the port. I have modified	the API of $m->addServer to:
 
 	$m->addServer($_ENV["MEMCACHIER_SERVERS"]);
 	// Evaluates as: $m->addServer(xxx.ec2.memcachier.com:11211');
