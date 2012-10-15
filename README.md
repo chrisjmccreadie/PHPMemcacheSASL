@@ -7,7 +7,7 @@ This is a modification of [ronnywang](https://github.com/ronnywang/PHPMemcacheSA
 On AppFog, the connection information for your Memcachier instance is exposed through three environment variables: 
 
 ```php
-echo $_ENV['MEMCACHIER_SERVERS']  // output: xxx.ec2.memcachier.com
+echo $_ENV['MEMCACHIER_SERVERS']  // output: xxx.ec2.memcachier.com:11211
 echo $_ENV['MEMCACHIER_USERNAME'] // output: aa92mro2in
 echo $_ENV['MEMCACHIER_PASSWORD'] // output: oim23in924b2NS3Iaid1x193jhe1
 ```
