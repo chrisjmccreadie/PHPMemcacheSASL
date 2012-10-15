@@ -85,7 +85,7 @@ function memcacheQuery($query, $hours = 1) {
 		}
 		$cache_entry = $m->add($key, $songs_array, 60*60*$hours);
 	}
-	return $songs_array;
+	return count($songs_array[0]) == 1 ? $songs_array[0] : $songs_array;
 }
 ```
 
