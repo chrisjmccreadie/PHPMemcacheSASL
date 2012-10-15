@@ -71,8 +71,6 @@ Here is a production example using Memcachier to cache results from queries to a
 ```php
 include('MemcacheSASL.php');
 
-///
-
 function memcacheQuery($query, $hours = 1) {
 	$m = new MemcacheSASL;
 	$m->addServer(getenv('MEMCACHIER_SERVERS'));
