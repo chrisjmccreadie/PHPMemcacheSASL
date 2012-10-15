@@ -7,9 +7,9 @@ This is a modification of [ronnywang](https://github.com/ronnywang/PHPMemcacheSA
 On AppFog, the connection information for your Memcachier instance is exposed through three environment variables: 
 
 ```php
-$_ENV['MEMCACHIER_SERVERS']  // output: xxx.ec2.memcachier.com
-$_ENV['MEMCACHIER_USERNAME'] // output: aa92mro2in
-$_ENV['MEMCACHIER_PASSWORD'] // output: oim23in924b2NS3Iaid1x193jhe1
+echo $_ENV['MEMCACHIER_SERVERS']  // output: xxx.ec2.memcachier.com
+echo $_ENV['MEMCACHIER_USERNAME'] // output: aa92mro2in
+echo $_ENV['MEMCACHIER_PASSWORD'] // output: oim23in924b2NS3Iaid1x193jhe1
 ```
 
 The format of ``$_ENV['MEMCACHIER_SERVERS']`` is ``$HOST:$PORT`` (ex. xxx.ec2.memcachier:11211). In the [AppFog Memcachier PHP docs](http://docs.appfog.com/add-ons/memcachier#php), the example code suggests that you add a server using the syntax:  
