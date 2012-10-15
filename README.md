@@ -37,7 +37,7 @@ First, make sure you have activated the Memcachier add-on in [your AppFog consol
 3. Click "Install" under Memcachier
 4. Click "Env Variables" in your left navigation. Make sure that your ``$_ENV['MEMCACHIER_SERVERS']``, ``$_ENV['MEMCACHIER_USERNAME']``, and ``$_ENV['MEMCACHIER_PASSWORD']`` variables are listed.
 
-Now you are ready to integrate Memcachier with your code. To get started, download PHPMemcacheSASL.php and put it in your working directory. If you have another implementation of PHPMemcacheSASL.php, you must replace it with the file from this project. In this example, I will assume PHPMemcacheSASL.php is in the same directory:
+Now you are ready to integrate Memcachier with your code. To get started, download MemcacheSASL.php and put it in your working directory. If you have another implementation of MemcacheSASL.php, you must replace it with the file from this project. In this example, I will assume MemcacheSASL.php is in the same directory:
 
 ```php
 include('MemcacheSASL.php');
