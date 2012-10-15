@@ -89,10 +89,6 @@ function memcacheQuery($query, $hours = 1) {
 }
 ```
 
-### Used by
-
-If you use this software, and would like to be listed below, just [send me an email](mailto:cyrus@findnewjams.com).
-
 ### Revisions, Contact, and Acknowledgements
 
 Please feel free to submit a pull request. I created this project to benefit other users, and plan to continually revise it as per my communications with them. Thanks to [ronnywang](https://github.com/ronnywang/PHPMemcacheSASL) for the base code and [AppFog](http://appfog.com) for providing an awesome hosting solution.
