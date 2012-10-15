@@ -2,18 +2,22 @@
 
 This is a modification of [ronnywang](https://github.com/ronnywang/PHPMemcacheSASL)'s implementation of PHPMemcacheSASL specifically for use on [AppFog](http://appfog.com). 
 
-
-
 ### What's the difference?
 
-On AppFog, the connection information for your Memcachier instance is exposed through three environment variables: MEMCACHIER_SERVERS, MEMCACHIER_USERNAME, and MEMCACHIER_PASSWORD. The format of MEMCACHIER_SERVERS is $HOST:$PORT (ex. xxx.ec2.memcachier:11211). In the [AppFog Memcachier PHP docs](http://docs.appfog.com/add-ons/memcachier#php), the example code suggests that you add a server using the syntax:  
+On AppFog, the connection information for your Memcachier instance is exposed through three environment variables: 
+
+* $_ENV['MEMCACHIER_SERVERS'] (ex. xxx.ec2.memcachier.com)
+* $_ENV['MEMCACHIER_USERNAME'] (ex. aa92mro2in)
+* $_ENV['MEMCACHIER_PASSWORD'] (ex. oim23in924b2NS3Iaid1x193jhe1)
+
+The format of $_ENV['MEMCACHIER_SERVERS'] is $HOST:$PORT (ex. xxx.ec2.memcachier:11211). In the [AppFog Memcachier PHP docs](http://docs.appfog.com/add-ons/memcachier#php), the example code suggests that you add a server using the syntax:  
 
 	$m->addServer($_ENV["MEMCACHIER_SERVERS"], '11211');
 	// Evaluates as: $m->addServer(xxx.ec2.memcachier.com:11211', '11211');
 
 This is a problem because the first argument of addServer expects the hostname without the port.  
 
-I have modified	the API to:
+I have modified	the API of $m->addServer to:
 
 	$m->addServer($_ENV["MEMCACHIER_SERVERS"]);
 	// Evaluates as: $m->addServer(xxx.ec2.memcachier.com:11211');
