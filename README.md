@@ -20,7 +20,7 @@ This is a problem because the first argument of addServer expects the hostname w
 	$m->addServer($_ENV["MEMCACHIER_SERVERS"]);
 	// Evaluates as: $m->addServer(xxx.ec2.memcachier.com:11211');
 
-This way, you do not need to parse/explode the value of MEMCACHIER_SERVERS before using it in your code. Other implementations (and docs) for PHPMemcacheSASL do not account for this difference in syntax, so they will be unhelpful to you if you are an AppFog client.
+This way, you do not need to parse/explode the value of ``$_ENV['MEMCACHIER_SERVERS']`` before using it in your code. Other implementations (and docs) for PHPMemcacheSASL do not account for this difference in syntax, so they will be unhelpful to you if you are an AppFog client.
 
 ### Implementation
 
@@ -29,7 +29,7 @@ First, make sure you have activated the Memcachier add-on in [your AppFog consol
 1. Go to the dashboard for your app
 2. Click "Add-Ons" in your left navigation
 3. Click "Install" under Memcachier
-4. Click "Env Variables" in your left navigation. Make sure that your MEMCACHIER_SERVERS, MEMCACHIER_USERNAME, and MEMCACHIER_PASSWORD variables are listed.
+4. Click "Env Variables" in your left navigation. Make sure that your ``$_ENV['MEMCACHIER_SERVERS']``, ``$_ENV['MEMCACHIER_USERNAME']``, and ``$_ENV['MEMCACHIER_PASSWORD']`` variables are listed.
 
 Now you are ready to integrate Memcachier with your code. To get started, download PHPMemcacheSASL.php and put it in your working directory. If you have another implementation of PHPMemcacheSASL.php, you must replace it with the file from this project. In this example, I will assume PHPMemcacheSASL.php is in the same directory:
 
