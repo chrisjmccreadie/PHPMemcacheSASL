@@ -3,8 +3,9 @@
 include('MemcacheSASL.php');
 
 $m = new MemcacheSASL;
-$m->addServer('mc7.ec2.northscale.net', '11211');
-$m->setSaslAuthData('username', 'password');
+$m->addServer(getenv('MEMCACHIER_SERVERS'));
+$m->setSaslAuthData(getenv('MEMCACHIER_USERNAME'), getenv('MEMCACHIER_PASSWORD'));
 var_dump($m->add('test', '123'));
+echo $m->get('test');
 $m->delete('test');
 
