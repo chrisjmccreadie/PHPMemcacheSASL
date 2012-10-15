@@ -118,9 +118,9 @@ class MemcacheSASL
         }
     }
 
-    public function addServer($host, $port, $weight = 0)
+    public function addServer($server, $weight = 0)
     {
-        $this->_fp = stream_socket_client($host . ':' . $port);
+        $this->_fp = stream_socket_client($server);
     }
 
     public function get($key)
