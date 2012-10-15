@@ -75,8 +75,8 @@ function memcacheQuery($query, $hours = 1) {
 	$m = new MemcacheSASL;
 	$m->addServer(getenv('MEMCACHIER_SERVERS'));
 	$m->setSaslAuthData(getenv('MEMCACHIER_USERNAME'), getenv('MEMCACHIER_PASSWORD'));
-	$key = md5($query);
 	
+	$key = md5($query);
 	$songs_array = $m->get($key);
 	if( !$songs_array ) {
 		$raw_query = mysql_query($query);
@@ -85,7 +85,6 @@ function memcacheQuery($query, $hours = 1) {
 		}
 		$cache_entry = $m->add($key, $songs_array, 60*60*$hours);
 	}
-
 	return $songs_array;
 }
 ```
