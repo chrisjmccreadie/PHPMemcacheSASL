@@ -79,8 +79,8 @@ function memcacheQuery($query, $hours = 1) {
 	$key = md5($query);
 	$songs_array = $m->get($key);
 	if( !$songs_array ) {
-		$raw_query = mysql_query($query);
-		while( $songs = mysql_fetch_array($raw_query) ) {
+		$query = mysql_query($query);
+		while( $songs = mysql_fetch_array($query) ) {
 			$songs_array[] = $songs;
 		}
 		$cache_entry = $m->add($key, $songs_array, 60*60*$hours);
