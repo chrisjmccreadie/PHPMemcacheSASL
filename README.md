@@ -1,6 +1,6 @@
 ## PHPMemcacheSASL for AppFog
 
-This is a modification of [ronnywang](https://github.com/ronnywang/PHPMemcacheSASL)'s implementation of PHPMemcacheSASL specifically for use on [AppFog](http://appfog.com). 
+This is a modification of PHPMemcacheSASL specifically for use on [AppFog](http://appfog.com). As of now, this is the library that they recommend in the [Appfog Memcachier documentation](https://docs.appfog.com/add-ons/memcachier#php). Enjoy!
 
 ### What's the difference?
 
@@ -19,7 +19,7 @@ $m->addServer($_ENV["MEMCACHIER_SERVERS"], '11211');
 // Evaluates as: $m->addServer(xxx.ec2.memcachier.com:11211', '11211');
 ```
 
-This is a problem because the first argument of addServer expects the hostname without the port. I have modified the API of $m->addServer to:
+This is a problem because the first argument of addServer expects the hostname without the port. I have modified the API of ``$m->addServer`` to:
 
 ```php
 $m->addServer($_ENV["MEMCACHIER_SERVERS"]);
